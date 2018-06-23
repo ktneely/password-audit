@@ -33,44 +33,28 @@ Move these files to your analysis workstation and then stop the Volume Shadow Se
 ## Part II: Export the Hash database from the NTDS.dit file
 
 1. Create a directory structure for organizing the password analysis using the create-dirs.sh script.  For reference this performs the following:
-
 ```
 mkdir -p AD-YYYYMM/analysis
 mkdir -p AD-YYYYMM/hashes
 mkdir -p AD-YYYYMM/raw
 mkdir -p AD-YYYYMM/working
 ```
-
 Where YYYYMM is the date.  E.g. 201709  (for September in 2017)
-
 2. Move the files extracted in Part I to your "raw" directory
-
 3. Install packages
-
   `apt-get install build-essential autopoint`
-
 4. Download libesdb from [https://github.com/libyal/libesedb](https://github.com/libyal/libesedb)  (get the archive package instead of cloning the repository) and follow these steps to build the package.
-
-
   1. cd into the directory and prepare the package
   2. `sudo apt-get install autopoint`
   3. `./synclibs.sh`
-  
   4. `./autogen.sh`
-  
   5. Build from source:
-  
     `./configure && make && make install`
-	
   6. Copy the new binaries to /opt:
-  
     `cp -r esedtools/ /opt/`
-	
-  7. From your raw directory, extract the tables from the ntds.dit file, e.g.:
-  
+5. From your raw directory, extract the tables from the ntds.dit file, e.g.:
     `/opt/esedbtools/esedbexport -t ~/AD-YYYYMM/working ./ntds.dit`
-	
-  8. this will create an hidden directory called ‘.export’ under your working directory.  All the tables should now be there. 
+6. this will create an hidden directory called ‘.export’ under your working directory.  All the tables should now be there. 
 
 ## Part III:  Extract the hashes from the NTDS.dit file
 
