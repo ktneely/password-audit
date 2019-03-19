@@ -1,6 +1,6 @@
 # password-audit
 
-Watch the [BSidesLV 2018 presentation](https://www.youtube.com/watch?v=DJ3l6ByvP2I) on YouTube!
+Watch the [BSidesLV 2018 presentation](https://www.youtube.com/watch?v=DJ3l6ByvP2I) on YouTube!  
 or the [BSidesPDX 2018 presentation](https://www.youtube.com/watch?v=S6Fs0s23DqQ) which is not cropped at the beginning.
 
 Instructions and tools to aid in auditing password strength for accounts in Active Directory.
